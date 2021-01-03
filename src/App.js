@@ -32,6 +32,9 @@ export const App = () => {
     }
   };
   return (
+    //ImageListのpropsとして{images}を渡すことで、pixabayがhttp通信を行った場合、
+    //画像データの結果がImageListにpropsとして渡される。
+    //ImagesListコンポーネントは一個一個それを展開し、ImagesList内の変数imagesで表示
     <div className="ui container" style={{ marginTop: "20px" }}>
       <SearchBar onSubmit={onSearchSubmit} />
       <ImageList images={images} />
