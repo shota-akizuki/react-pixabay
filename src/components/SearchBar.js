@@ -20,20 +20,22 @@ export const SearchBar = ({ onSubmit }) => {
     //value属性に、inputに表示する内容を{term}として定義
     //inputの内容が変わった場合はonChange関数が走る
     //event.target.valueは検索欄に入力された文字列
-    <form onSubmit={onFormSubmit} class="ui form">
-      <div class="field">
-        <label>Image Search</label>
-        <input
-          type="text"
-          name="search"
-          placeholder=""
-          value={term}
-          onChange={(event) => {
-            setTerm(event.target.value);
-          }}
-        />
-      </div>
-    </form>
+    <div className="ui segment">
+      <form onSubmit={onFormSubmit} class="ui form">
+        <div class="field">
+          <label>Image Search</label>
+          <input
+            type="text"
+            name="search"
+            placeholder=""
+            value={term}
+            onChange={(event) => {
+              setTerm(event.target.value);
+            }}
+          />
+        </div>
+      </form>
+    </div>
   );
 };
 

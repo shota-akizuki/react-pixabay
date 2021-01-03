@@ -2,11 +2,15 @@ import axios from "axios";
 import React, { useState } from "react";
 import ImageList from "./components/ImageList";
 import SearchBar from "./components/SearchBar";
+import logo from "./logo.png";
 
 export const App = () => {
   //取得した画像のデータをAppコンポーネントに保持したいのでuseStateを使う
   //初期値はからの配列
   const [images, setimages] = useState([]);
+  //環境変数に設定したAPIを受け取る変数
+  const ApiKey = process.env.REACT_APP_PIXABAY_APIKEY;
+
   //ユーザーが検索した文字列で検索を行う関数
   //非同期通信を行うためにasyncとtry/catch構文を使う
   const onSearchSubmit = async (term) => {
@@ -14,7 +18,7 @@ export const App = () => {
       //これも分割代入っぽい？→あとで調べる。
       //連想配列っぽさもある
       const params = {
-        key: "18128449-db79a4160355fe2c6bcda9a88",
+        key: ApiKey,
         q: term,
       };
       //responseに取得したデータを代入する
@@ -36,6 +40,7 @@ export const App = () => {
     //画像データの結果がImageListにpropsとして渡される。
     //ImagesListコンポーネントは一個一個それを展開し、ImagesList内の変数imagesで表示
     <div className="ui container" style={{ marginTop: "20px" }}>
+      <img src={logo} alt="logo" className="pixabay-logo" />
       <SearchBar onSubmit={onSearchSubmit} />
       <ImageList images={images} />
     </div>

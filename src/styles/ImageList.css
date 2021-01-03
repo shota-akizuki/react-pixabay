@@ -1,0 +1,30 @@
+/*
+logoの幅を小さくしたい
+*/
+.pixabay-logo {
+  width: 200px;
+}
+
+/*
+image-listの<a>タグ全体を、ui medium imageでスタイリング
+*/
+
+.image-list .ui.medium.image {
+  /*
+画像を4つ並べたいので、
+*/
+  width: 25%;
+  /*
+top,left-right,bottomの順で、画像の合間に隙間を入れたいので、
+*/
+  padding: 0 3px 3px;
+}
+
+/*
+image-listの<a>タグ、ui medium imageの中のimgタグをスタイリング
+*/
+
+.image-list .ui.medium.image img {
+  width: 100%;
+  height: 100%;
+}

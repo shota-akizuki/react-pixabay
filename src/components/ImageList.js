@@ -1,4 +1,7 @@
 import React from "react";
+import Masonry from "react-masonry-component";
+//スタイルを当てるためには必要なcssファイルをインポート
+import "../styles/ImageList.css";
 
 //https通信でゲットした画像の配列データを展開するためのコンポーネント
 //propsとしてimagesをAppコンポーネントから受け取る
@@ -26,9 +29,8 @@ const ImageList = (props) => {
   });
 
   return (
-    <div>
-      <p>{images}</p>
-    </div>
+    //Masonryコンポーネントで囲むことで画像がいい感じにレンガ状に並ぶ
+    <Masonry className="image-list">{images}</Masonry>
   );
 };
 
