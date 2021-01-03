@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import SearchBar from "./components/SearchBar";
 
-function App() {
+export const App = () => {
+  //コンソール画面にユーザーが検索した文字列を表示する関数
+  const onSearchSubmit = (term) => {
+    console.log(term);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="ui container" style={{ marginTop: "20px" }}>
+      <SearchBar onSubmit={onSearchSubmit} />
     </div>
   );
-}
+};
 
 export default App;
